@@ -2,7 +2,12 @@
     "cSpell.words": [
         "Fatura",
         "Kahvaltı",
+        "Ödeme",
         "Sinema",
         "Spor"
+    ],
+    "cSpell.ignoreWords": [
+        "Kahvalti",
+        "Malik"
     ]
 }
