@@ -1,4 +1,4 @@
-import { Model } from './model';
+import { Model ,TodoItems} from './model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -16,5 +16,13 @@ export class AppComponent {
 
   getItems(){
     return this.model.items.filter(item=> !item.action);
+  }
+
+  addItem(value:any){
+    if (value!= "") {
+      this.model.items.push(new TodoItems(value,false));
+    }
+    console.log(this.model.items);
+
   }
 }
