@@ -1,4 +1,4 @@
-import { Model ,TodoItems} from './model';
+import { Model, TodoItems } from './model';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,22 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-
   model = new Model();
+  isDisplay = false;
 
-  getName(){
+  getName() {
     return this.model.user;
   }
 
-  getItems(){
-    return this.model.items.filter(item=> !item.action);
+  getItems() {
+    if (this.isDisplay) {
+      return this.model.items;
+    }
+    return this.model.items.filter((item) => !item.action);
   }
 
-  addItem(value:any){
-    if (value!= "") {
-      this.model.items.push(new TodoItems(value,false));
+  addItem(value: any) {
+    if (value != '') {
+      this.model.items.push(new TodoItems(value, false));
     }
     console.log(this.model.items);
-
   }
 }
